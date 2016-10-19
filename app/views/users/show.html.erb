@@ -1,31 +1,38 @@
 <%= render "shared/notice" %>
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+			<div class="col-sm-4">
+				<%= gravatar_for @user %>
+				<span>
+				  <%= @user.name %>
+				</span>
+			</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+			<div class="col-sm-8">
+				<h1>Microposts</h1>
+				<hr>
+				<div class="col-sm-2"></div>
+				<ul style="list-style: none;">
+					<% @user.microposts.each do |micropost| %>
+						<li>
+					        <p style="font-weight: bold"><%= micropost.content %></p>
+					        <p><%= micropost.created_at %></p>
+					     	<hr>
+					    </li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-2"></div>
+</div>
 
-<h1>Microposts</h1>
+	
 
-<table class="table table-striped">
-	<thead>
-		<th>Date</th>
-		<th>Content</th>
-	</thead>
-	<tbody>
-		<% @user.microposts.each do |micropost| %>
-		<tr>
-	            <td><%= micropost.created_at %></td>
-	            <td><%= micropost.content %></td>
-	    </tr>
-	    <% end %>
-	</tbody>
-</table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+
