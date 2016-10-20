@@ -12,17 +12,14 @@
 			</div>
 
 			<div class="col-sm-8">
-				<% count = 0 %>
-				<% @user.microposts.each do |micropost| %>
-						<% count = count + 1 %>
-				<%end%>
-				<h1>Microposts (<%= count %>)</h1>
+				<h1>Microposts (<%= @user.microposts.count %>)</h1>
 				<hr>
-				<ul style="list-style: none;">
+
+				<ul class="microposts">
 					<% @user.microposts.each do |micropost| %>
 						<li>
 					        <p style="font-weight: bold"><%= micropost.content %></p>
-					        <p><%= micropost.created_at %></p>
+					        <i><%= time_ago_in_words(micropost.created_at) %></i>
 							<hr>
 					    </li>
 					<% end %>
