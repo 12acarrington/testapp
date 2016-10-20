@@ -9,12 +9,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.order(:name).paginate(page: params[:page])
+    @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @microposts = @user.microposts.paginate(page: params[:page])
+    @micropost = @user.microposts.new
   end
 
   # GET /users/new
