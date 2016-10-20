@@ -23,4 +23,8 @@ module SessionsHelper
 		#line 22 is going to call line 14 to see if signed in
 		#if @current_user is empty then will return false
 	end
+
+	def current_user?(user)
+		user == current_user
+	end
 end
