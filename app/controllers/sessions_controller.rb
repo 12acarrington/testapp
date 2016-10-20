@@ -26,5 +26,6 @@ class SessionsController < ApplicationController
 		current_user.update_attribute(:remember_token, User.digest(User.new_remember_token))
 		cookies.delete(:remember_token)
 		self.current_user = nil
+		flash[:error] = "You have signed out"
 	end
 end
