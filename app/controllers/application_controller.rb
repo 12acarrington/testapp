@@ -12,4 +12,18 @@ class ApplicationController < ActionController::Base
 
   	end
   end
+
+
+  def not_signed_in_user
+    if signed_in?
+      flash[:error] = "You're already signed in! If you want to create a new user please sign out."
+      redirect_to root_url
+
+    end
+  end
+
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end
