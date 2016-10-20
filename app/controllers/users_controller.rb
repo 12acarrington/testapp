@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      flash[:error] = 'You do not have autherisation to do that'
-      edirect_to(root_url) unless current_user?(@user)
+      flash[:error] = 'You do not have authorization to do that'
+      redirect_to(root_url) unless current_user?(@user)
     end
 end

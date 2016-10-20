@@ -11,6 +11,24 @@ ul.microposts {
 	background-color: #f2dede;
 	background-color: #ebccd1;
 }
+
 .avatar{
 	margin-top: 16px;
 }
+
+ul.users {
+	list-style: none;
+	padding: 0;
+
+	li {
+		border-top: 1px solid lightgrey;
+		padding: 10px 0;
+		
+
+		&:last-child {
+			border-bottom: 1px solid lightgrey;
+		}
+	}
+}
+
+
