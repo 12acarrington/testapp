@@ -5,40 +5,13 @@
 		<div class="row">
 
 			<div class="col-sm-4">
-				<%= gravatar_for @user %>
-				<span>
-				  <%= @user.name %>
-				</span>
-
-				<div class="row micropost">
-					<div class="col-sm-12">
-						<%= form_for(@micropost) do |f| %>
-							<%= f.text_area :content %>
-							<%= f.submit "Post", class: "btn btn-lg btn-primary" %>
-						<% end %>
-					</div>
-				</div>
+				<%= render 'profile' %>
+			</div>
 
 			</div>
 
 			<div class="col-sm-8">
-				<% if @microposts.any? %>
-					<h1>Microposts (<%= @microposts.count %>)</h1>
-					<hr>
-
-					<ul class="microposts">
-						<% @microposts.each do |micropost| %>
-							<li>
-						        <p style="font-weight: bold"><%= micropost.content %></p>
-						        <i class="timestamp"><%= time_ago_in_words(micropost.created_at) %></i>
-								<hr>
-						    </li>
-						<% end %>
-					</ul>
-
-					<%= will_paginate @microposts %>
-				<% else %>
-				<% end %>
+				<%= render 'feed' %>
 			</div>
 		</div>
 	</div>

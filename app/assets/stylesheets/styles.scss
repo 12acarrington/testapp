@@ -33,5 +33,20 @@ ul.users {
 .timestamp{
 	color: #A9A9A9;
 }
+.micropost form textarea {
+	width: 100%;
+	max-width: 100%;
+}
+.bar{
+	border-top: 1px solid lightgrey;
+	padding: 8px 0;
+	p {
+		margin: 0;
+	}
+}
+div.left{
+	margin: 0;
+
+}
 
 
