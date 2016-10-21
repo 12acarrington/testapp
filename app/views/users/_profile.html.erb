@@ -6,7 +6,7 @@
 	<div class="row micropost">
 		<div class="col-sm-12">
 			<%= form_for(@micropost) do |f| %>
-				<%= f.text_area :content, row: 8 %>
+				<%= f.text_area :content, rows: 6 %>
 				<%= f.submit "Post", class: "btn btn-lg btn-primary btn-block" %>
 			<% end %>
 		</div>
