@@ -1,13 +1,7 @@
 <%= gravatar_for @user, size: 80 %>
 	<span><%= @user.name %></span>
-	<div class="row stats">
-		<div class="col-sm-6">
-			<p>Followers</p>
-		</div>
-		<div class="col-sm-6">
-			<p>Following</p>
-		</div>
-	</div>
+
+	<%= render 'users/stats' %>
 
 	<div class="row micropost">
 		<div class="col-sm-12">

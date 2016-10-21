@@ -48,5 +48,15 @@ div.left{
 	margin: 0;
 
 }
+.bold {
+	font-weight: bold
+}
 
+.user_avatars {
+	margin-top: 10px;
+
+	.gravatar {
+		margin: 2px 2px;
+	}
+}
 
