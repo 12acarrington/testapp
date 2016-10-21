@@ -2,13 +2,6 @@ class MicropostsController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :destroy]
   before_action :set_micropost, only: [:destroy]
 
-
-  # GET /microposts
-  # GET /microposts.json
-  def index
-    @microposts = Micropost.all
-  end
-
   
 
   # POST /microposts
