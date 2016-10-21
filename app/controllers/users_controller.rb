@@ -91,7 +91,8 @@ def followers
 
     def correct_user
       @user = User.find(params[:id])
-      flash[:error] = 'You do not have authorization to do that'
-      redirect_to(root_url) unless current_user?(@user)
+      unless current_user?(@user)
+        flash[:error] = "You are not authorised to do that!"
+        redirect_to(root_url)
+      end
     end
-end
